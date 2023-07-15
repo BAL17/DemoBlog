@@ -2,9 +2,6 @@ import React, { useState, useEffect }  from "react"
 import Navbar from "./Components/Navbar";
 import Blogs from "./Components/Blogs";
 
-
-
-
 function App() {
   //state for blogs we fetch from db
   const [isBlogs, setBlogs] = useState([]);
@@ -23,9 +20,10 @@ function App() {
   return (
     <>
       <div className="container" >
-        <h1> TESTING </h1>
-        <Navbar />
-        <Blogs isBlogs={isBlogs} />
+            <Navbar />
+          <div className="blogContainer">
+            <Blogs isBlogs={isBlogs} />
+          </div>
       </div>
     </>
   )

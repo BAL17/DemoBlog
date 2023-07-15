@@ -1,9 +1,18 @@
-
+// import HomeButton from './Components/HomeButton'
 
 const Navbar = () => {
     return (
-    <h1>Hello Navbar</h1>
-)
+      <>
+        <div className="navbar">
+          <h1>Hello Navbar</h1>
+            {/* <ul> */}
+                {/* <HomeButton />
+                <ContactButton />
+                <PostNewBlog /> */}
+            {/* </ul> */}
+        </div>
+      </>
+    );
 };
 
 
