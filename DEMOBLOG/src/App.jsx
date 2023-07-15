@@ -1,4 +1,8 @@
 import React, { useState, useEffect }  from "react"
+import Navbar from "./Components/Navbar";
+import Blogs from "./Components/Blogs";
+
+
 
 
 function App() {
@@ -8,16 +12,20 @@ function App() {
   const [isPictures, setPictures] = useState([]);
   
   useEffect(() => {
-    const getData = () => {
-    
-  }
-})
-
+    const getBlogs = async () => {
+      const res = await fetch("http://localhost:8001/blogs")
+      const data = await res.json()
+      setBlogs(data)
+    }
+    getBlogs()
+  },[])
+  
   return (
     <>
       <div className="container" >
-        <h1> testing </h1>
-    
+        <h1> TESTING </h1>
+        <Navbar />
+        <Blogs isBlogs={isBlogs} />
       </div>
     </>
   )
