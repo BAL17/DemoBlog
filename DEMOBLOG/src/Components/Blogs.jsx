@@ -1,9 +1,14 @@
 import BlogsItem from "./BlogsItem";
 
-const Blogs = ({isBlogs}) => {
+const Blogs = ({ isBlogs, isCurrentBlog, setCurrentBlog }) => {
+  return isBlogs.map((blog) => (
+    <BlogsItem
+      isBlogs={blog}
+      isCurrentBlog={isCurrentBlog}
+      setCurrentBlog={setCurrentBlog}
+      key={blog.id}
+    />
+  ));
+};
 
-  
-    return isBlogs.map((blog) => <BlogsItem isBlogs={blog} key={blog.id} />);
-}
-
-export default Blogs
+export default Blogs;
