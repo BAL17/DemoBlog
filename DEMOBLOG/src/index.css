@@ -4,11 +4,37 @@
 }
 
 .displaydiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
-  height: 30rem;
+  min-height: fit-content;
   /* max-width: fit-content; */
   border: 2px solid pink;
 }
+
+.randomBlogCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 100rem;
+  padding: 1rem;
+  border: 1px solid #bfbfbf;
+  background-color: aliceblue;
+  /* min-width: ; */
+  font-size: 1.7rem;
+}
+.randomBlogCard:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 8px 10px #888888;
+    max-width: 100rem;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #bfbfbf;
+  transition: all 0.2s ease-out;
+}
+
 /* MAIN CONTAINER AND PAGE */
 .container {
   display: flex;
@@ -74,20 +100,46 @@
 .blogCard {
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   margin: 3rem;
   padding: 1rem;
-  border: 2px solid black;
+  border: 1px solid #bfbfbf;
   background-color: aliceblue;
   max-width: 30rem;
   /* min-height: fit-content; */
 }
+.blogCard:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 8px 10px #888888;
+  width: 50rem;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #bfbfbf;
+  transition: all 0.2s ease-out;
+}
 
-.readMeBtn {
+.singleBlog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  inline-size: 80rem;
+  overflow: hidden;
+  font-size: 3rem;
+  text-align: center;
+  max-width: fit-content;
+  background-color: whitesmoke;
+  border: 2px solid black;
+  min-height: fit-content;
+ padding: 2rem;
+}
+
+.returnBtn {
+  border: 2px solid red;
+  height: 3rem;
+  width: 5rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   background-color: antiquewhite;
   display: flex;
-  justify-content: flex-end;
 }
