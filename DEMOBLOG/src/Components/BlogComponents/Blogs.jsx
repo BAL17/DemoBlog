@@ -1,22 +1,15 @@
 import BlogsItem from "./BlogsItem";
 import PicturesItem from "./PicturesItems";
 
-const Blogs = ({ isBlogs, isCurrentBlog, setCurrentBlog, onBlogClick, isPictures, setCurrentPictures}) => {
+const Blogs = ({
+  isBlogs,
+  isCurrentBlog,
+  setCurrentBlog,
+  onBlogClick,
+  onBackToHome,
+}) => {
   return (
     <>
-  
-      {/* {isPictures.map((picture) => (
-        <PicturesItem
-          isPictures={picture}
-          key={picture.id}
-          isCurrentBlog={isCurrentBlog}
-          setCurrentBlog={setCurrentBlog}
-          onBlogClick={onBlogClick}
-          setCurrentPictures={setCurrentPictures}
-  
-        />
-      ))}; */}
-      
       {isBlogs.map((blog) => (
         <BlogsItem
           isBlogs={blog}
@@ -24,11 +17,12 @@ const Blogs = ({ isBlogs, isCurrentBlog, setCurrentBlog, onBlogClick, isPictures
           isCurrentBlog={isCurrentBlog}
           setCurrentBlog={setCurrentBlog}
           onBlogClick={onBlogClick}
+          onBackToHome={onBackToHome}
         />
-      )
-      )};
-  </>
-  )
+      ))}
+      ;
+    </>
+  );
 };
 
 export default Blogs;

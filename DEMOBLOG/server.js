@@ -54,7 +54,7 @@ app.post("/blogs", async (req, res) => {
   console.log(post);
   try {
     const results = await pool.query(
-      `INSERT INTO blogs (author, blogs_title, blogs_body) VALUES ( ('${post.author}'), ('${post.blogs_title}'), ('${post.blogs_desc}'), ('${post.blogs_body}') ) RETURNING *`
+      `INSERT INTO blogs (author, blogs_title, blogs_body) VALUES ( ('${post.author}'), ('${post.blogs_title}'), ('${post.blogs_body}') ) RETURNING *`
     );
     if (results.rowCount === 0) {
       res.status(404).send("Cannot Find Blog Post");
@@ -72,7 +72,7 @@ app.put("/blogs/:id", async (req, res) => {
   const post = req.body;
   try {
     const results = await pool.query(
-      `UPDATE blogs SET author = ('${post.author}'), blogs_title = ('${post.blogs_title}'), blogs_desc = ('${post.blogs_desc}'), blogs_body = ('${post.blogs_body}') WHERE id = ${id} RETURNING *`
+      `UPDATE blogs SET author = ('${post.author}'), blogs_title = ('${post.blogs_title}'), blogs_body = ('${post.blogs_body}') WHERE id = ${id} RETURNING *`
     );
     if (results.rowCount === 0) {
       res.status(404).send("Cannot Find Blog Post");

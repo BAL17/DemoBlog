@@ -23,12 +23,12 @@
   word-break: break-all;
   max-width: 95rem;
   padding: 1.5rem;
-  
   border: 1px solid #bfbfbf;
   background-color: green;
   /* min-width: ; */
   font-size: 1.7rem;
 }
+
 .randomBlogCard:hover {
   cursor: pointer;
   box-shadow: 10px 10px 8px 10px #888888;
@@ -88,6 +88,17 @@
   transition: all 0.2s ease-out;
 }
 
+.deleteBlogBtn{
+  background-color: red;
+}
+.deleteBlogBtn:hover{
+  cursor: pointer;
+    box-shadow: 10px 10px 8px 10px #888888;
+    width: 15rem;
+    padding: 10px 10px 20px 10px;
+  border: 1px solid #bfbfbf;
+  transition: all 0.2s ease-out;
+}
 .singleBlog {
   display: flex;
   flex-direction: column;
@@ -113,6 +124,63 @@
   display: block;
   position: relative;
   left: 140rem;
+font-size: larger;
+font-weight: 700;
+}
+
+.formContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-width: 80rem;
+  background-color: whitesmoke;
+  border: 10px solid pink;  
+  padding-left: 15rem;
+  padding-right: 15rem;
+  /* border: 1px solid #bfbfbf; */
+  min-height: 60rem;
+}
+.formContainer h2{
+  display: flex;
+font-size: 4rem;
+  height: 4rem;
+  width: 20rem;
+}
+
+.forminput {
+  display: flex;
+  flex-direction: column;
+  margin:5rem;
+
+border-radius: 20px;
+  height: 4rem;
+  width: 20rem;
+}
+.forminput:hover{
+  cursor: pointer;
+  box-shadow: 10px 10px 8px 10px #888888;
+  width: 50rem;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #bfbfbf;
+  /* transition: all 0.2s ease; */
+}
+
+#formBtn{
+  width: 10rem;
+  background-color: red;
+  height: 8rem;
+}
+.returnFormBtn{
+  border: 2px solid red;
+  height: 5rem;
+  width: 18rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  background-color: white;
+  display: block;
+  position: relative;
+  top: 60rem;
+  left: 20rem;
 font-size: larger;
 font-weight: 700;
 }

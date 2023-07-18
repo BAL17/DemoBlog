@@ -3,12 +3,17 @@ import Navbar from "./Components/HeaderStuff/Navbar";
 import Blogs from "./Components/BlogComponents/Blogs";
 import SingleBlog from "./Components/BlogComponents/SingleBlog";
 import DisplayBlog from "./Components/BlogComponents/DisplayBlog";
+import CreateBlogForm from "./Components/BlogComponents/CreateBlogForm";
 
 function App() {
-  //states
+  //states for all blogs
   const [isBlogs, setBlogs] = useState([]);
+  //current blog they click
   const [isCurrentBlog, setCurrentBlog] = useState(null);
+  //return to the home screen
   const [isHomeScreen, setHomeScreen] = useState(true);
+  //we want to display the input form only
+  const [isNewBlog, setNewBlog] = useState(false);
 
   // // state for pictures we get from our extra API
   // const [isPictures, setPictures] = useState(Array(25).fill(null));
@@ -20,9 +25,8 @@ function App() {
   //     setPictures(data);
   //   };
   //   getPictures();
-    
+
   // }, Array(25).fill());
-  
 
   //useEffect FOR DB BLOGS
   useEffect(() => {
@@ -44,42 +48,66 @@ function App() {
     setHomeScreen(false);
     setCurrentBlog(blog);
   };
+  //displaying form
+  const handleNewBlogClick = () => {
+    setHomeScreen(false);
+    setNewBlog(true);
+  };
+
+  const handleNewBlogHomeClick = () => {
+    setHomeScreen(true);
+    setNewBlog(null);
+  };
 
   return (
     <>
-      <Navbar handleBackToHome={handleBackToHome} />
-      <div className="displaydiv">
-        <div className="randomBlogCard">
-          <DisplayBlog
-            isBlogs={isBlogs}
-            onBlogClick={handleBlogClick}
-            isCurrentBlog={isCurrentBlog}
-            setCurrentBlog={setCurrentBlog}
-            onBackToHome={handleBackToHome}
+      <Navbar
+        handleBackToHome={handleBackToHome}
+        handleNewBlogClick={handleNewBlogClick}
+      />
+      {isNewBlog ? (
+        <div className="container">
+          <CreateBlogForm
+            handleNewBlogClick={handleNewBlogClick}
+            onHandleNewBlogHomeClick={handleNewBlogHomeClick}
           />
         </div>
-      </div>
-      <div className="container">
-        {isHomeScreen ? (
-          <div className="blogContainer">
-            <Blogs
-              // isPictures={isPictures}
-              // setCurrentPictures={setCurrentPictures}
-              isBlogs={isBlogs}
-              isCurrentBlog={isCurrentBlog}
-              setCurrentBlog={setCurrentBlog}
-              onBlogClick={handleBlogClick}
-            />
+      ) : (
+        <>
+          <div className="displaydiv">
+            <div className="randomBlogCard">
+              <DisplayBlog
+                isBlogs={isBlogs}
+                onBlogClick={handleBlogClick}
+                isCurrentBlog={isCurrentBlog}
+                setCurrentBlog={setCurrentBlog}
+                onBackToHome={handleBackToHome}
+              />
+            </div>
           </div>
-        ) : (
-          <div className="blogContainer">
-            <SingleBlog
-              isCurrentBlog={isCurrentBlog}
-              onBackToHome={handleBackToHome}
-            />
+          <div className="container">
+            {isHomeScreen ? (
+              <div className="blogContainer">
+                <Blogs
+                  isBlogs={isBlogs}
+                  isCurrentBlog={isCurrentBlog}
+                  setCurrentBlog={setCurrentBlog}
+                  onBlogClick={handleBlogClick}
+                  onBackToHome={handleBackToHome}
+                />
+              </div>
+            ) : (
+              <div className="blogContainer">
+                <SingleBlog
+                  isBlogs={isBlogs}
+                  isCurrentBlog={isCurrentBlog}
+                  onBackToHome={handleBackToHome}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
     </>
   );
 }

@@ -1,11 +1,11 @@
 import { IoCreateOutline } from "react-icons/io5";
-import CreateBlog from "../BlogComponents/CreateBlogForm";
 
-const CreateBlogBtn = () => {
+
+const CreateBlogBtn = ({handleCreateBtn}) => {
   const onBtnClick = () => {
-    <CreateBlog />;
+    handleCreateBtn()
   };
-
+ 
   return (
     <div className="createButton" onClick={onBtnClick}>
       <IoCreateOutline className="Icon" />

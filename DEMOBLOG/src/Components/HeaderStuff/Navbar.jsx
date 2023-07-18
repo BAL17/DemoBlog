@@ -1,10 +1,14 @@
 import HomeButton from "./HomeButton";
 import ContactButton from "./ContactButton";
 import CreateBlogBtn from "./CreateBlogBtn";
-
+import React, {useState} from "react";
 import "./navbar.css";
 
-const Navbar = ({ handleBackToHome }) => {
+const Navbar = ({ handleBackToHome, handleNewBlogClick }) => {
+  const handleCreateBtn = () => {
+    handleNewBlogClick();
+  };
+
   return (
     <>
       <div className="navbar">
@@ -16,11 +20,9 @@ const Navbar = ({ handleBackToHome }) => {
           <span className="blogName">g</span>
         </h1>
         <ul className="navbutton">
-          <HomeButton
-            handleBackToHome={handleBackToHome}
-          />
+          <HomeButton handleBackToHome={handleBackToHome} />
           <ContactButton />
-          <CreateBlogBtn />
+          <CreateBlogBtn handleCreateBtn={handleCreateBtn} />
         </ul>
       </div>
     </>

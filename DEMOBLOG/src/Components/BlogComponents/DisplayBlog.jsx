@@ -43,7 +43,7 @@ const DisplayBlog = ({ isBlogs, setCurrentBlog, onBlogClick }) => {
   return (
     <div className="displayBlog" onClick={handleClick} id={isBlogs.id}>
       <h1>{isRandomBlog.blogs_title}</h1>
-      <p>{truncateText(isRandomBlog.blogs_desc, 50)}</p>
+      <p>{truncateText(isRandomBlog.blogs_body, 50)}</p>
       <h3>{isRandomBlog.author}</h3>
     </div>
   );
