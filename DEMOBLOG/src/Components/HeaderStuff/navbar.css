@@ -1,0 +1,88 @@
+/* *** HEADER / NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  height: fit-content;
+  
+
+}
+
+.navbarh1 { 
+  display: flex;
+ font-family: "Open Sans", sans-serif;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  font-size: 6.5rem;
+  /* margin-left: 10rem; */
+}
+
+
+.navbutton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-right: 5rem; */
+}
+
+.homeButton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.createButton{
+ display: flex;
+ align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+   cursor: pointer;
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+   font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem 2rem;
+  font-size: 4rem;
+cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.box:last-child {
+  border-bottom: none;
+}
+
+.icon {
+  margin-right: 2rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+

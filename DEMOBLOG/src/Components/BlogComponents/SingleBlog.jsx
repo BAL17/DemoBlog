@@ -1,12 +1,12 @@
 import React from "react";
+import DisplayBlog from "./DisplayBlog";
 
 const SingleBlog = ({ isCurrentBlog, onBackToHome }) => {
-  
-    const handleBackClick = () => {
-        onBackToHome();
-  }
-  
-    return (
+  const handleBackClick = () => {
+    onBackToHome();
+  };
+
+  return (
     <div className="singleBlog">
       <h1>{isCurrentBlog.blogs_title}</h1>
       <p>{isCurrentBlog.blogs_body}</p>

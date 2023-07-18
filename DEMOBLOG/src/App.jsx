@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Components/Navbar";
-import Blogs from "./Components/Blogs";
-import SingleBlog from "./Components/SingleBlog";
-import DisplayBlog from "./Components/DisplayBlog";
+import Navbar from "./Components/HeaderStuff/Navbar";
+import Blogs from "./Components/BlogComponents/Blogs";
+import SingleBlog from "./Components/BlogComponents/SingleBlog";
+import DisplayBlog from "./Components/BlogComponents/DisplayBlog";
 
 function App() {
-  //states 
+  //states
   const [isBlogs, setBlogs] = useState([]);
   const [isCurrentBlog, setCurrentBlog] = useState(null);
   const [isHomeScreen, setHomeScreen] = useState(true);
 
-  //state for pictures we get from our extra API
+  // // state for pictures we get from our extra API
   // const [isPictures, setPictures] = useState(Array(25).fill(null));
-
+  //   const[isCurrentPictures, setCurrentPictures] = useState(null);
   // useEffect(() => {
   //   const getPictures = async () => {
   //     const res = await fetch("https://jsonplaceholder.typicode.com/photos");
@@ -20,8 +20,9 @@ function App() {
   //     setPictures(data);
   //   };
   //   getPictures();
-  // }, Array(25).fill(data.url));
-  // console.log[isPictures];
+    
+  // }, Array(25).fill());
+  
 
   //useEffect FOR DB BLOGS
   useEffect(() => {
@@ -44,44 +45,16 @@ function App() {
     setCurrentBlog(blog);
   };
 
-
-  // return (
-  //   <>
-  //     <Navbar />
-  //     <div className="displaydiv">
-  //       <div className="randomBlogCard">
-  //         <DisplayBlog isBlogs={isBlogs} />
-  //       </div>
-  //     </div>
-
-  //     {isCurrentBlog ? (
-  //       <div className="container">
-  //         <div className="blogContainer">
-  //           <SingleBlog isCurrentBlog={isCurrentBlog} />
-  //         </div>
-  //       </div>
-  //     ) : (
-  //       <div className="container">
-  //         <div className="blogContainer">
-  //           <Blogs
-  //             isBlogs={isBlogs}
-  //             isCurrentBlog={isCurrentBlog}
-  //             setCurrentBlog={setCurrentBlog}
-  //           />
-  //         </div>
-  //       </div>
-  //     )}
-  //   </>
-  // );
   return (
     <>
-      <Navbar />
+      <Navbar handleBackToHome={handleBackToHome} />
       <div className="displaydiv">
         <div className="randomBlogCard">
           <DisplayBlog
             isBlogs={isBlogs}
             onBlogClick={handleBlogClick}
             isCurrentBlog={isCurrentBlog}
+            setCurrentBlog={setCurrentBlog}
             onBackToHome={handleBackToHome}
           />
         </div>
@@ -90,6 +63,8 @@ function App() {
         {isHomeScreen ? (
           <div className="blogContainer">
             <Blogs
+              // isPictures={isPictures}
+              // setCurrentPictures={setCurrentPictures}
               isBlogs={isBlogs}
               isCurrentBlog={isCurrentBlog}
               setCurrentBlog={setCurrentBlog}
