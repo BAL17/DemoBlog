@@ -20,7 +20,7 @@ const BlogsItems = ({
     console.log(isBlogs.id);
     try {
       const response = await fetch(
-        `http://localhost:8001/blogs/${isBlogs.id}`,
+        `https://demoblog-4tye.onrender.com/blogs/${isBlogs.id}`,
         {
           method: "DELETE",
         }

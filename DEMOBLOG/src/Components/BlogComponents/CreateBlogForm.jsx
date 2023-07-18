@@ -1,8 +1,6 @@
 // import { BiImageAdd } from "react-icons/bi";
 import { useState } from "react";
 
-
-
 const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
   const [text, setText] = useState({
     author: "",
@@ -21,9 +19,9 @@ const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
 
   //!!!POST REQUEST
   const handleSumbit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8001/blogs", {
+      const response = await fetch("https://demoblog-4tye.onrender.com/blogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,15 +34,8 @@ const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
       }
 
       const data = await response.json();
-      console.log(data);
-      // Clear the input field
-      // setText({
-      //   author: "",
-      //   blog_title: "",
-      //   blog_body: "",
-      // });
 
-       handleBackClick()
+      handleBackClick();
     } catch (error) {
       console.error(error);
       // alert("Failed to add task. Please try again.");

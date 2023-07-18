@@ -31,7 +31,7 @@ function App() {
   //useEffect FOR DB BLOGS
   useEffect(() => {
     const getBlogs = async () => {
-      const res = await fetch("http://localhost:8001/blogs");
+      const res = await fetch("https://demoblog-4tye.onrender.com/blogs");
       const data = await res.json();
       setBlogs(data);
     };
