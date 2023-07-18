@@ -23,6 +23,7 @@ const pool = new Pool({
 
 //MIDDLEWARE
 app.use(express.json());
+app.use(express.static("dist"))
 app.use(cors({ origin: "*" }));
 
 //* RESTFUL API WITH ALL 5 ROUTES
