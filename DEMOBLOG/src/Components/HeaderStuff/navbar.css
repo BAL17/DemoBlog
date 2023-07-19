@@ -1,46 +1,22 @@
 /* *** HEADER / NAVBAR */
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  background-color: white;
-  height: 10vw;
-} */
+
 .navbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   border-bottom: 1px solid grey;
   height: 8vw;
+  
 }
-
-/* .bottomborder {
-  position: fixed;
-  top: 9.5rem;
-  height: 1px;
-  width: 100vw;
-  border-bottom: 4px solid lightgray;
-} */
 
 .navbarh1 {
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
-  /* position: fixed; */
   font-weight: 900;
-  /* padding: 0rem 9rem; */
-  margin-left: 15rem;
-  font-size: 7rem;
+  padding: 0rem 10rem;
+  font-size: 4rem;
 }
-
-/* .navbutton {
-  display: flex;
-  position: fixed;
-  top: 22px;
-  left: 40rem;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .navbutton{
     display: flex;
@@ -50,7 +26,7 @@
 
 .homeButton {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -59,7 +35,7 @@
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
@@ -69,7 +45,7 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 4px;
   padding: 1rem 2rem;
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
