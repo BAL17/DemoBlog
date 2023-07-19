@@ -1,10 +1,6 @@
- 
+import {RiDeleteBin6Line} from 'react-icons/ri' 
 
-const BlogsItems = ({
-  isBlogs,
-  onBlogClick,
-  onBackToHome,
-}) => {
+const BlogsItems = ({ isBlogs, onBlogClick, onBackToHome, setBlogs }) => {
   const handleClick = () => {
     onBlogClick(isBlogs);
   };
@@ -29,6 +25,12 @@ const BlogsItems = ({
       if (!response.ok) {
         throw new Error("Failed to delete blog.");
       } else {
+        const getBlogs = async () => {
+          const res = await fetch("https://demoblog-4tye.onrender.com/blogs");
+          const data = await res.json();
+          setBlogs(data);
+        };
+        getBlogs();
         handleDisplaySwitch();
       }
     } catch (error) {
@@ -44,7 +46,7 @@ const BlogsItems = ({
         <p>{truncateText(isBlogs.blogs_body, 50)}</p>
         <h3>{isBlogs.author}</h3>
         <button className="deleteBlogBtn" onClick={handleDelete}>
-          TEST
+          <RiDeleteBin6Line />
         </button>
       </div>
     </>

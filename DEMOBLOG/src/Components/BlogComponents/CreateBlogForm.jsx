@@ -1,11 +1,11 @@
 // import { BiImageAdd } from "react-icons/bi";
 import { useState } from "react";
 
-const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
+const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick, setBlogs }) => {
   const [text, setText] = useState({
     author: "",
-    blog_title: "",
-    blog_body: "",
+    blogs_title: "",
+    blogs_body: "",
   });
 
   const handleBackClick = () => {
@@ -35,6 +35,10 @@ const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
 
       const data = await response.json();
 
+      // const res = await fetch("https://demoblog-4tye.onrender.com/blogs");
+      // const getData = await res.json();
+      // setBlogs(...getData);
+      
       handleBackClick();
     } catch (error) {
       console.error(error);
@@ -51,18 +55,18 @@ const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
             className="forminput"
             type="text"
             placeholder="Blog Title"
-            name="blog_title"
+            name="blogs_title"
             onChange={handleChange}
-            value={text.blog_title}
+            value={text.blogs_title}
           />
           <h2>Blog Body</h2>
           <input
             className="forminput"
             type="text"
             placeholder="Blog Body"
-            name="blog_body"
+            name="blogs_body"
             onChange={handleChange}
-            value={text.blog_body}
+            value={text.blogs_body}
           />
           <h2>Author</h2>
           <input
@@ -74,7 +78,7 @@ const CreateBlogForm = ({ handleNewBlogClick, onHandleNewBlogHomeClick }) => {
             value={text.author}
           />
 
-          <button type="sumbit" id="formBtn" />
+          <button type="sumbit" id="formBtn">Sumbit Post</button>
         </form>
         <button className="returnFormBtn" onClick={handleBackClick}>
           Back

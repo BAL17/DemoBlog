@@ -24,6 +24,7 @@ const Navbar = ({ handleBackToHome, handleNewBlogClick }) => {
           <ContactButton />
           <CreateBlogBtn handleCreateBtn={handleCreateBtn} />
         </ul>
+        <div className="bottomborder"></div>
       </div>
     </>
   );

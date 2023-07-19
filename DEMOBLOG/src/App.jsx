@@ -68,6 +68,7 @@ function App() {
       {isNewBlog ? (
         <div className="container">
           <CreateBlogForm
+            setBlogs={setBlogs}
             handleNewBlogClick={handleNewBlogClick}
             onHandleNewBlogHomeClick={handleNewBlogHomeClick}
           />
@@ -94,6 +95,7 @@ function App() {
                   setCurrentBlog={setCurrentBlog}
                   onBlogClick={handleBlogClick}
                   onBackToHome={handleBackToHome}
+                  setBlogs={setBlogs}
                 />
               </div>
             ) : (
